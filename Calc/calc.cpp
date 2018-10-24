@@ -156,7 +156,8 @@ void calc::storeMonomio(QString s)
 {
     monomio m = getMonomio(s);
     temp.addMonomio(m);
-    //std::cerr << temp << endl;
+    //std::cerr << "STORED: " << stored << endl;
+    //std::cerr << "TEMP: " << temp << endl;
 }
 
 void calc::checkInput()
@@ -263,6 +264,8 @@ void calc::on_buttonEquals_clicked()
         solved = true;
     }
     catch (eccezione& e) {
+        if (e.getMsg() == "ERRORE\nNon e' possibile dividere per 0")
+            on_buttonClear_clicked();
         ui->displayError->setText(e.getMsg());
     }
 }

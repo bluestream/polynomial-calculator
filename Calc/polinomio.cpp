@@ -198,7 +198,8 @@ polinomio& polinomio::operator=(const polinomio& p)
 
 bool polinomio::operator==(const polinomio& p) const
 {
-    if (L.size() != p.L.size()) {
+    //PRE: i polinomi sono già stati semplificati e ordinati
+    if (L.size() == p.L.size()) {
         for (auto i = L.begin(), j = p.L.begin(); i != L.end(), j != p.L.end(); ++i, ++j) {
             if (*i != *j)
                 return false;
