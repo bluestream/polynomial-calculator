@@ -1,4 +1,4 @@
-# polynomials-calculator
+# 🔢 polynomials-calculator
 
 ![Preview image](./Calc/calculator-preview.png)
 
